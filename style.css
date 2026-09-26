@@ -1,0 +1,151 @@
+/* Holonote site — the app's grounds and inks, light and dark */
+
+:root {
+  --ground: hsl(60, 30%, 97%);
+  --ink: hsl(210, 2%, 18%);
+  --ink-soft: hsla(210, 2%, 18%, 0.55);
+  --rule: hsla(210, 2%, 18%, 0.12);
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: hsl(220, 24%, 12%);
+    --ink: hsl(0, 0%, 100%);
+    --ink-soft: hsla(210, 7%, 84%, 0.55);
+    --rule: hsla(210, 7%, 84%, 0.14);
+  }
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+  padding: 0 24px;
+}
+
+/* Home: everything centred in the viewport */
+
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0;
+}
+
+.hero > * { min-width: 0; }
+
+.icon {
+  width: 120px;
+  height: 120px;
+  border-radius: 27px;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.12);
+}
+
+h1 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  margin: 28px 0 0;
+}
+
+.tagline {
+  font-family: var(--serif);
+  font-size: 30px;
+  line-height: 1.25;
+  margin: 12px 0 0;
+  align-self: stretch;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 40px;
+  line-height: 0;
+}
+
+.badge img {
+  height: 54px;
+  width: auto;
+}
+
+.foot {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.foot a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.foot a:hover { text-decoration: underline; }
+
+.foot .dot { margin: 0 10px; }
+
+/* Text pages */
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 0 96px;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.page .back {
+  display: inline-block;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.page .back:hover { text-decoration: underline; }
+
+.page h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.page .meta {
+  color: var(--ink-soft);
+  font-size: 14px;
+  margin: 0 0 36px;
+}
+
+.page h2 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 36px 0 8px;
+}
+
+.page p, .page li { margin: 0 0 14px; }
+
+.page ul { padding-left: 20px; }
+
+.page a { color: inherit; }
+
+@media (max-width: 420px) {
+  .icon { width: 100px; height: 100px; border-radius: 22px; }
+  .tagline { font-size: 26px; }
+}
